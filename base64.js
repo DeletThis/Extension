@@ -10,13 +10,18 @@ function convertImgToBase64(url, callback, outputFormat){
         canvas.height = this.height;
         canvas.width = this.width;
         ctx.drawImage(this,0,0);
-        var dataURL = canvas.toDataURL(outputFormat || 'image/png');
+        var dataURL = canvas.toDataURL(outputFormat || 'image/png').replace(/^data:image\/(png|jpg);base64,/, '');
         callback(dataURL);
         canvas = null; 
     };
     img.src = url;
 }
 
+/*for (i = 0; i< images.length; i++) {
+    if ((images[i].width < 100) && (images[i].height < 100)) {
+        
+    }
+}*/
 convertImgToBase64(imageSrc, function(base64Img){
-    console.log('IMAGE:',base64Img);
+    console.log(base64Img);
 })
