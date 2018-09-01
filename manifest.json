@@ -2,7 +2,7 @@
     "name": "D E LE T  T H O Ts",
     "version": "1.0",
     "description": "deLeT Memes",
-    "permissions": ["activeTab", "declarativeContent", "storage"],
+    "permissions": ["activeTab", "declarativeContent", "storage", "https://*.cloudfunctions.net/", "https://*/"],
     "background": {
       "scripts": ["background.js"],
       "persistent": false
