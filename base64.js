@@ -1,5 +1,7 @@
 var images  = document.getElementsByTagName("img");
 var imageSrc = images[2].src;
+var imgSrcArray = [];
+var base64Array = [];
 
 function convertImgToBase64(url, callback, outputFormat){
     var img = new Image();
@@ -17,11 +19,12 @@ function convertImgToBase64(url, callback, outputFormat){
     img.src = url;
 }
 
-/*for (i = 0; i< images.length; i++) {
-    if ((images[i].width < 100) && (images[i].height < 100)) {
-        
+for (i = 0; i< images.length; i++) {
+    if ((images[i].width > 100) && (images[i].height > 100)) {
+        convertImgToBase64(images[i].src, function(base64Img){
+            base64Array.push(base64Img);
+        })
     }
-}*/
-convertImgToBase64(imageSrc, function(base64Img){
-    console.log(base64Img);
-})
+}
+
+console.log(base64Array);
