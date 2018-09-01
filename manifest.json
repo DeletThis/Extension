@@ -1,17 +1,27 @@
 {
-    "name": "D E LE T  T H O Ts",
+    "name": "Freshify",
     "version": "1.0",
-    "description": "deLeT Memes",
+    "description": "Enhancing your browser experience since 2k18",
     "permissions": ["activeTab", "declarativeContent", "storage", "https://*.cloudfunctions.net/"],
+    "page_action": {
+      "default_popup": "popup.html",
+      "default_icon": {
+        "16": "images/pepe16.png",
+        "32": "images/pepe32.png",
+        "48": "images/pepe48.png",
+        "128": "images/pepe128.png"
+      }
+    },
+    "icons": {
+      "16": "images/pepe16.png",
+      "32": "images/pepe32.png",
+      "48": "images/pepe48.png",
+      "128": "images/pepe128.png"
+    },
     "background": {
       "scripts": ["background.js"],
       "persistent": false
     },
-    "page_action": {
-      "default_popup": "popup.html",
-      "default_icon": "images/get_started128.png"
-    },
-    
     "options_page": "options.html",
     "manifest_version": 2
   }
