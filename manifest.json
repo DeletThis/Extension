@@ -1,0 +1,17 @@
+{
+    "name": "D E LE T  T H O Ts",
+    "version": "1.0",
+    "description": "deLeT Memes",
+    "permissions": ["activeTab", "declarativeContent", "storage"],
+    "background": {
+      "scripts": ["background.js"],
+      "persistent": false
+    },
+    "page_action": {
+      "default_popup": "popup.html",
+      "default_icon": "images/get_started128.png"
+    },
+    
+    "options_page": "options.html",
+    "manifest_version": 2
+  }
