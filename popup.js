@@ -1,4 +1,4 @@
-let startButton = document.getElementById('NOstartButton');
+let startButton = document.getElementById('startButton');
 startButton.onclick = function(element) {
     let color = element.target.value;
     chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
