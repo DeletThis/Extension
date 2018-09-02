@@ -1,6 +1,7 @@
 var images = document.getElementsByTagName("img");
 var imgSrcArray = [];
 var base64Array = [];
+var freshness = 0.5;
 
 function convertImgToBase64(url, callback, outputFormat) {
     var img = new Image();
@@ -17,7 +18,7 @@ function convertImgToBase64(url, callback, outputFormat) {
     };
     img.src = url;
 }
-
+    
 function determineMeme(b64Image, imgElement) {
     var xhr = new XMLHttpRequest();
     xhr.open('POST', 'https://us-central1-deletthis-123.cloudfunctions.net/cloud_is_meme', true);
@@ -29,7 +30,7 @@ function determineMeme(b64Image, imgElement) {
         removeMeme(imgElement, (serverResponse['is_meme']));
     };
 
-    xhr.send(encodeURIComponent('image') + '=' + encodeURIComponent(b64Image));
+    xhr.send(encodeURIComponent('image') + '=' + encodeURIComponent(b64Image) + '&' + encodeURIComponent('score'), + '=' + encodeURIComponent(freshness));
 }
 
 function removeMeme(imageIndex, response) {
@@ -49,5 +50,6 @@ for (i = 0; i < images.length; i++) {
     }
 }
 
-console.log('Images to process: ' + base64Array.length.toString())
+console.log(images);
+console.log('Images to process: ' + base64Array.length.toString());
 console.log(base64Array);
