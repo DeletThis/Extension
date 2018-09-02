@@ -22,13 +22,11 @@ function determineMeme(b64Image, imgElement) {
     var xhr = new XMLHttpRequest();
     xhr.open('POST', 'https://us-central1-deletthis-123.cloudfunctions.net/cloud_is_meme', true);
     xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-    console.log(imgElement);
 
     xhr.onload = function () {
         console.log(this.responseText);
         var serverResponse = JSON.parse(this.responseText);
         removeMeme(imgElement, (serverResponse['is_meme']));
-        console.log("xD" + imgElement);
     };
 
     xhr.send(encodeURIComponent('image') + '=' + encodeURIComponent(b64Image));
@@ -36,9 +34,7 @@ function determineMeme(b64Image, imgElement) {
 
 function removeMeme(imageIndex, response) {
     if (response == true) {
-        console.log(imageIndex)
         imageIndex.src = "https://static-cdn.jtvnw.net/jtv_user_pictures/e91a3dcf-c15a-441a-b369-996922364cdc-profile_image-300x300.png";
-        console.log(imageIndex.src);
     }
 }
 
