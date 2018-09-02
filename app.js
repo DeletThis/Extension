@@ -53,4 +53,5 @@ for (i = 0; i < images.length; i++) {
     }
 }
 
+console.log('Images to process: ' + base64Array.length.toString())
 console.log(base64Array);
