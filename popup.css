@@ -1,0 +1,19 @@
+
+button {
+    font-family: "Comic Sans MS";
+    font-size: 20px;
+    color: rgba(0,0,0,0);
+    height: 128px;
+    width: 128px;
+    box-shadow: 5px 10px 8px 10px #000000;
+    text-shadow: 2px 2px 8px rgb(0, 0, 0);
+    border: none;
+    background-image: url("images/pakalu.jpg");
+}
+button:hover {
+    box-shadow: 5px 10px 8px 10px #ff4646;
+    color: rgba(0,0,0,255);
+    text-shadow: 2px 2px 8px rgb(255, 255, 255);
+    transition: all 0.5s;
+    background-image: url("images/pakaluRed.jpg");    
+}
