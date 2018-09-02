@@ -7,3 +7,9 @@ startButton.onclick = function(element) {
           {file: 'app.js'});
     });
   };
+
+
+let changeButton = document.getElementById("opt");
+changeButton.onclick = function() {
+  startButton.classList.toggle("class1");
+};
